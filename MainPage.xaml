@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MiniProyectos.MainPage"
+             NavigationPage.HasNavigationBar="False"
+             Title="sdasdsa">
+
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#004A00" Offset="0.0" />
+            <GradientStop Color="#228B22" Offset="0.2" />
+            <GradientStop Color="#32CD32" Offset="0.3" />
+            <GradientStop Color="#7CFC00" Offset="0.4" />
+            <GradientStop Color="#ADFF2F" Offset="0.5" />
+            <GradientStop Color="#7CFC00" Offset="0.6" />
+            <GradientStop Color="#32CD32" Offset="0.7" />
+            <GradientStop Color="#228B22" Offset="0.8" />
+            <GradientStop Color="#004A00" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <StackLayout VerticalOptions="CenterAndExpand">
+
+        <Button Text="Generador de colores" FontAttributes="Bold" FontSize="Large"
+                x:Name="colorMaker"
+                Clicked="colorMaker_Clicked"
+                Margin="20"
+                BorderWidth="3"
+                BorderColor="Black"/>
+
+        <Button Text="Ahorcado" FontAttributes="Bold" FontSize="Large"
+                x:Name="ahorcado"
+                Clicked="ahorcado_Clicked"
+                Margin="20"
+                BorderWidth="3"
+                BorderColor="Black"/>
+
+        <Button Text="Calculadora" FontAttributes="Bold" FontSize="Large"
+                x:Name="calculadora"
+                Clicked="calculadora_Clicked"
+                Margin="20"
+                BorderWidth="3"
+                BorderColor="Black"/>
+
+        <Button Text="Consultor de clima" FontAttributes="Bold" FontSize="Large"
+                x:Name="MauiWeather"
+                Clicked="MauiWeather_Clicked"
+                Margin="20"
+                BorderWidth="3"
+                BorderColor="Black"/>
+
+        <Button Text="Gestor de gastos" FontAttributes="Bold" FontSize="Large"
+                x:Name="ProsperDaily"
+                Clicked="ProsperDaily_Clicked"
+                Margin="20"
+                BorderWidth="3"
+                BorderColor="Black"/>
+
+
+    </StackLayout>
+    
+</ContentPage>

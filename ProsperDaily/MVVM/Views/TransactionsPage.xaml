@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MiniProyectos.ProsperDaily.MVVM.Views.TransactionsPage"
+             NavigationPage.HasNavigationBar="False"
+             Title="TransactionsPage">
+
+    <Grid RowDefinitions=".15*, .15*, .70*">
+        <RoundRectangle Grid.RowSpan="2" StyleClass="TopRectangleProsper"/>
+        <VerticalStackLayout StyleClass="HeaderProsper">
+            <Label StyleClass="HeaderSubtitleProsper" Text="Agregar Transaccion" HorizontalOptions="Start" FontSize="Large"/>
+        </VerticalStackLayout>
+
+        <Grid Grid.Row="1" Grid.RowSpan="2" Margin="15">
+            <RoundRectangle StyleClass="BalanceRectangleProsper"/>
+
+            <VerticalStackLayout Spacing="10" StyleClass="Padding25Prosper" VerticalOptions="Start">
+                <Label Text="Nombre de transaccion" TextColor="{StaticResource Gray900}" HorizontalOptions="Start"/>
+                <Frame StyleClass="FrameBorderProsper">
+                    <Entry Text="{Binding Transaction.Name}"/>
+                </Frame>
+
+                <Label StyleClass="MarginT15Prosper" Text="Cantidad" TextColor="{StaticResource Gray900}" HorizontalOptions="Start"/>
+                <Frame StyleClass="FrameBorderProsper">
+                    <Entry Text="{Binding Transaction.Amount}"
+                           VerticalOptions="Center"
+                           Keyboard="Numeric"/>
+                </Frame>
+
+                <Label StyleClass="MarginT15Prosper" Text="Dia a transferir" TextColor="{StaticResource Gray900}" HorizontalOptions="Start"/>
+                <Frame StyleClass="FrameBorderProsper">
+                    <DatePicker Date="{Binding Transaction.OperationDate}"/>
+                </Frame>
+                <HorizontalStackLayout>
+                    <CheckBox IsChecked="{Binding Transaction.IsIncome}"/>
+                    <Label Text="Es Entrada" TextColor="{StaticResource Gray900}"/>
+                </HorizontalStackLayout>
+
+                <Button StyleClass="MarginT15Prosper" Text="Guardar" BackgroundColor="{StaticResource Primary}" TextColor="White" FontSize="Default"
+                        x:Name="GuardarTx" Clicked="GuardarTx_Clicked"/>
+                <Button StyleClass="MarginT15Prosper" Text="Cancelar" BackgroundColor="DarkRed" TextColor="White" FontSize="Default"
+                        x:Name="Cancelar" Clicked="Cancelar_Clicked"/>
+
+            </VerticalStackLayout>
+        </Grid>
+    </Grid>
+    
+</ContentPage>

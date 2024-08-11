@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MiniProyectos.Ahorcado"
+             Title="Ahorcado">
+
+    <ContentPage.Resources>
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="Green" />
+            <Setter Property="TextColor" Value="Black" />
+        </Style>
+    </ContentPage.Resources>
+
+    <Grid RowDefinitions=".6*, .4*">
+        <VerticalStackLayout Spacing="10">
+            <Label FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                    TextColor="Black"
+                    Text="{Binding GameStatus}"/>
+            <Label HorizontalOptions="Center"
+                   Text="{Binding LetrasElegidasView}"
+                   VerticalOptions="Center"
+                   TextColor="Black"/>
+            <Image Source="{Binding ImagenEstado}"
+               HeightRequest="200"/>
+            <Label FontSize="40"
+               HorizontalOptions="Center"
+               Text="{Binding LetrasAdivinadas}"
+               VerticalOptions="Center"
+                   TextColor="Black"/>
+            <Label FontSize="Large"
+               HorizontalOptions="Center"
+               Text="{Binding Mensaje}"
+                   TextColor="Black"/>
+            <Button HorizontalOptions="Center"
+                    Text="Reset"
+                    WidthRequest="100"
+                    Clicked="Reset_Clicked"/>
+
+        </VerticalStackLayout>
+        <FlexLayout Grid.Row="1" Wrap="Wrap" JustifyContent="SpaceEvenly"
+                    x:Name="BotonesLetras"
+                    BindableLayout.ItemsSource="{Binding Abecedario}">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                    <Button HeightRequest="50"
+                            WidthRequest="50"
+                            Text="{Binding .}"
+                            Clicked="Button_Clicked"/>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </FlexLayout>
+    </Grid>
+</ContentPage>

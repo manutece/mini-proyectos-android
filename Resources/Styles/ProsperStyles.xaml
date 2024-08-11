@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Color x:Key="MainColorProsper">#301551</Color>
+    <Color x:Key="SecondaryColorProsper">#9742ff</Color>
+
+    <Style Class="TopRectangleProsper" TargetType="RoundRectangle">
+        <Setter Property="Margin" Value="-5" />
+        <Setter Property="CornerRadius" Value="0,0,25,25" />
+        <Setter Property="Fill" Value="{StaticResource MainColorProsper}" />
+    </Style>
+
+    <Shadow
+        x:Key="shadowProsper"
+        Brush="{StaticResource SecondaryColorProsper}"
+        Opacity="0.6"
+        Radius="15"
+        Offset="0,15" />
+
+    <Style Class="BalanceRectangleProsper" TargetType="RoundRectangle">
+        <Setter Property="CornerRadius" Value="10" />
+        <Setter Property="Fill" Value="{StaticResource White}" />
+        <Setter Property="StrokeThickness" Value="2" />
+        <Setter Property="Shadow" Value="{StaticResource shadowProsper}" />
+    </Style>
+
+    <Style ApplyToDerivedTypes="True"
+            Class="Padding25Prosper"
+            TargetType="Layout">
+        <Setter Property="Padding" Value="25" />
+    </Style>
+
+    <Style
+        ApplyToDerivedTypes="True"
+        Class="MarginT15Prosper"
+        TargetType="View">
+        <Setter Property="Margin" Value="0,15,0,0" />
+    </Style>
+
+    <Style Class="FrameBorderProsper" TargetType="Frame">
+        <Setter Property="HeightRequest" Value="50" />
+        <Setter Property="Padding" Value="10,5" />
+        <Setter Property="BorderColor" Value="{StaticResource SecondaryColorProsper}" />
+    </Style>
+
+    <Style
+        ApplyToDerivedTypes="True"
+        Class="Margin15Prosper"
+        TargetType="Layout">
+        <Setter Property="Margin" Value="15" />
+    </Style>
+
+    <Style Class="HeaderProsper" TargetType="VerticalStackLayout">
+        <Setter Property="Margin" Value="15" />
+        <Setter Property="VerticalOptions" Value="Center" />
+    </Style>
+
+    <Style x:Key="LabelProsper" TargetType="Label">
+        <Setter Property="FontFamily" Value="Regular" />
+        <Setter Property="HorizontalTextAlignment" Value="Start" />
+    </Style>
+
+    <Style Class="HeaderTitleProsper" TargetType="Label" BasedOn="{StaticResource LabelProsper}">
+        <Setter Property="FontSize" Value="Small" />
+        <Setter Property="TextColor" Value="{StaticResource White}" />
+    </Style>
+    
+    <Style Class="HeaderSubTitleProsper" TargetType="Label" BasedOn="{StaticResource LabelProsper}">
+        <Setter Property="FontSize" Value="Large" />
+        <Setter Property="TextColor" Value="{StaticResource White}" />
+    </Style>
+
+    <Style Class="StrongTitleProsper" TargetType="Label" BasedOn="{StaticResource LabelProsper}">
+        <Setter Property="FontFamily" Value="Strong" />
+        <Setter Property="FontSize" Value="Large" />
+        <Setter Property="TextColor" Value="{StaticResource Black}" />
+    </Style>
+    
+    <Style Class="StrongMediumTitleProsper" TargetType="Label">
+        <Setter Property="FontFamily" Value="Strong" />
+        <Setter Property="FontSize" Value="Small" />
+        <Setter Property="TextColor" Value="{StaticResource Black}" />
+    </Style>
+
+    <Style Class="StrongSubTitleProsper" TargetType="Label">
+        <Setter Property="FontFamily" Value="Strong" />
+        <Setter Property="FontSize" Value="Medium" />
+        <Setter Property="TextColor" Value="{StaticResource Black}" />
+    </Style>
+
+    <Style Class="SmallFontProsper" TargetType="Label">
+        <Setter Property="FontFamily" Value="Regular" />
+        <Setter Property="FontSize" Value="Small" />
+        <Setter Property="TextColor" Value="Grey" />
+    </Style>
+
+    <Style Class="ListAmountProsper" TargetType="Label">
+        <Setter Property="FontSize" Value="Medium" />
+        <Setter Property="HorizontalTextAlignment" Value="End" />
+        <Setter Property="VerticalOptions" Value="Center" />
+    </Style>
+
+    <EllipseGeometry
+        x:Key="circleProsper"
+        Center="50,50"
+        RadiusX="30"
+        RadiusY="30" />
+
+    <Style Class="CircularButtonProsper" TargetType="Button">
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize" Value="Large" />
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="HeightRequest" Value="100" />
+        <Setter Property="WidthRequest" Value="100" />
+        <Setter Property="Margin" Value="0,0,0,-35" />
+        <Setter Property="VerticalOptions" Value="End" />
+        <Setter Property="HorizontalOptions" Value="End" />
+        <Setter Property="BackgroundColor" Value="{StaticResource MainColorProsper}" />
+        <Setter Property="Clip" Value="{StaticResource circleProsper}" />
+    </Style>
+
+    <Style Class="NoDataTextProsper" TargetType="Label">
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="TextColor" Value="{StaticResource Black}" />
+        <Setter Property="VerticalOptions" Value="Center" />
+    </Style>
+
+</ResourceDictionary>

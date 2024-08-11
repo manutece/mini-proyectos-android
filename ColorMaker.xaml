@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MiniProyectos.ColorMaker"
+             Title="ColorMaker">
+    <ContentPage.Resources>
+        <Color x:Key="Primary">#11ff99</Color>
+        <Color x:Key="Secondary">#ff9a2f</Color>
+        <Color x:Key="Tertiary">#ab3ff7</Color>
+    </ContentPage.Resources>
+
+    <Grid x:Name="Container" BackgroundColor="black">
+        <Frame Margin="10,0,10,0" VerticalOptions="Center" BorderColor="Black">
+            <VerticalStackLayout Spacing="15" VerticalOptions="Center">
+                <Label FontAttributes="Bold"
+                       FontSize="Large"
+                       HorizontalTextAlignment="Center"
+                       TextColor="Black"
+                       Text="Color Maker"/>
+                <Label Text="Red Value:" />
+                <Slider x:Name="SliderRed"
+                        MaximumTrackColor="{StaticResource Tertiary}"
+                        MinimumTrackColor="{StaticResource Secondary}"
+                        ThumbColor="{StaticResource Primary}"
+                        ValueChanged="Slider_ValueChanged"/>
+                <Label Text="Green Value:" />
+                <Slider x:Name="SliderGreen"
+                        MaximumTrackColor="{StaticResource Tertiary}"
+                        MinimumTrackColor="{StaticResource Secondary}"
+                        ThumbColor="{StaticResource Primary}"
+                        ValueChanged="Slider_ValueChanged"/>
+                <Label Text="Blue Value:" />
+                <Slider x:Name="SliderBlue"
+                        MaximumTrackColor="{StaticResource Tertiary}"
+                        MinimumTrackColor="{StaticResource Secondary}"
+                        ThumbColor="{StaticResource Primary}"
+                        ValueChanged="Slider_ValueChanged"/>
+                <Frame CornerRadius="25" HorizontalOptions="Center" BorderColor="Black">
+                    <HorizontalStackLayout >
+                        <Label x:Name="LabelHex"
+                               HorizontalTextAlignment="End"
+                               Text="Hex Value: #000000"
+                               VerticalOptions="Center" 
+                               TextColor="Black"/>
+                        <ImageButton Margin="10,0,0,0"
+                                     HeightRequest="25"
+                                     Source="copy.svg"
+                                     VerticalOptions="Center"
+                                     WidthRequest="25"
+                                     Clicked="ImageButton_Clicked"/>
+                    </HorizontalStackLayout>
+                </Frame>
+                <Button x:Name="ButtonRandom"
+                        BackgroundColor="{StaticResource Primary}"
+                        Text="Generate Random Color"
+                        TextColor="Black"
+                        BorderWidth="2"
+                        BorderColor="Black"
+                        Clicked="ButtonRandom_Clicked"/>
+            </VerticalStackLayout>
+        </Frame>
+    </Grid>
+    
+</ContentPage>
